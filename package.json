@@ -1,0 +1,14 @@
+{
+  "name": "translab2.0",
+  "version": "1.0.0",
+  "description": "test unitarios Translab",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Adriana Perez",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
+}
