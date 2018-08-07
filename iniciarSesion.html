@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap-4.1.1/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/inicio.css">
+    <title>Translab</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12" id="login">
+                <img src="img/imagen.png" alt="Trans-Lab">
+                <h1>TRANS-LAB</h1>
+                <br>
+                <div>
+                <form class="form-group">
+                    <input type="email" id="email" placeholder="Correo electrónico*" class="form-control" onblur="validarMail()">
+                    <br>
+                    <input type="password" id="password" placeholder="Contraseña*" class="form-control">
+                    <br>
+                    <small id="emailHelp" class="form-text text-muted">Campos obligatorios*</small>
+                    <br>
+                    <input type="button" id="loginbutton" onclick="loginWithFirebase()" value="Iniciar Sesión"class="form-control btn-warning">
+                    </br>
+                </form>
+            </div>
+                <p class="signin">¿No tienes cuenta? <a href="src/register.html">Registrate aqui</a>
+                    <br>
+                </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCUu_xUHtr2tQhv_Fi7LZ1pRO8CgyWhGr4",
+    authDomain: "translab-versiontwo.firebaseapp.com",
+    databaseURL: "https://translab-versiontwo.firebaseio.com",
+    projectId: "translab-versiontwo",
+    storageBucket: "translab-versiontwo.appspot.com",
+    messagingSenderId: "544715691826"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"crossorigin="anonymous"></script>
+    <script src="bootstrap-4.1.1/js/bootstrap.min.js"></script>
+    <script src="src/app.js"></script>
+
+</body>
+</html>
