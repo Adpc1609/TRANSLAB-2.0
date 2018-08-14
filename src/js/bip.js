@@ -47,6 +47,12 @@ calculator = (idBip) =>{
   let select = document.getElementById('inputGroupSelect01');
   var value = select.options[select.selectedIndex].value;
   console.log(value);
+
+  saldoDeTarjeta = idBip["saldoTarjeta"].replace
+ 
+ if (select == 1){
+   let TarifaAl = 760;
+  
  }
 }
 
