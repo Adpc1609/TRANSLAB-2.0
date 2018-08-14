@@ -1,0 +1,10 @@
+
+ const assert = require('chai').assert;
+ global.window = global;
+
+ global.firebase = require('firebase-functions-test')({
+    databaseURL: 'https://my-project.firebaseio.com',
+    storageBucket: 'my-project.appspot.com',
+    projectId: 'my-project',
+  }, 'path/to/serviceAccountKey.json');
+ require("..src/app.js");
