@@ -15,14 +15,17 @@ window.getBip = ()=>{
 let divSaldo = document.getElementById('divSaldo');
 let infoSaldo = (idBip) =>{
 let render = '';
+  render += `<div class="container my-3">`;
   render += `<div class="row">`;
-  render += `<div class="col-sm-6">`;
+  render += `<div class="col-sm-12 text-center">`;
+  render += `<div class="mostrarSaldo">`
   render += `<p class="titulo">SALDO TOTAL</p>`;
-  render += `<div id="continfo" class="col-sm-6">`
-  render += `<p class="paldo"> ${idBip.saldoTarjeta}</p>`;
+  render += `</div>`
+  render += `<div class="mostrarSaldo2">`
+  render += `<p class="saldo"> ${idBip.saldoTarjeta}</p>`;
   render += `</div>`;
   render += `</div>`;
-
+  render += `</div>`;
   divSaldo.innerHTML = render;
 };
 }
@@ -33,17 +36,17 @@ let url = `https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${idBi
 fetch(url)
 .then(response => response.json())
 .then(idBip =>{
-  calculatorTarifa(idBip);
+  calculator(idBip);
 })
 .cath(error =>{
   console.log(error);
 
 });
 
-calculatorTarifa = (idBip) =>{
+calculator = (idBip) =>{
   let select = document.getElementById('inputGroupSelect01');
-  console.log(select.value);
-  let options=document.getElementsByTagName("option")[select.value-1];
-  console.log(options);
+  var value = select.options[select.selectedIndex].value;
+  console.log(value);
  }
 }
+

@@ -44,4 +44,16 @@
     padding: 13%;
     float:none;
 }
-  
+
+.mostrarSaldo{
+  background-color:#333;
+}
+
+.mostrarSaldo2{
+  background-color:yellow;
+  height: 3rem;
+}
+
+p.saldo {
+  margin-top: -15px;
+}
