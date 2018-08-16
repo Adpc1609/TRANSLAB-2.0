@@ -42,8 +42,8 @@ fetch(url)
   console.log(error);
 
 });
-
-calculator = (idBip) =>{
+}
+/* calculator = (idBip) =>{
   let select = document.getElementById('inputGroupSelect01');
   var value = select.options[select.selectedIndex].value;
   console.log(value);
@@ -55,4 +55,4 @@ calculator = (idBip) =>{
   
  }
 }
-
+ */

@@ -1,3 +1,9 @@
+body{
+  background-color: gray;
+}
+
+
+
 /* Style the navigation menu */
 .topnav {
     overflow: hidden;
@@ -61,3 +67,4 @@
 .darken-grey-text {
     color: #2E2E2E;
 }
+

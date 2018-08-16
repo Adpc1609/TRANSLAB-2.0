@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap-4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="bootstrap-4.1.1/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="src/css/preguntas.css">
-    <title>Translab</title>
+    <link rel="stylesheet" href="src/css/menu.css">
+    <title>Document</title>
 </head>
 
 <body>
     <!-- Top Navigation Menu -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <div id="mySidenav" class="sidenav">
@@ -42,8 +43,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="md-form form-sm">
-                                <input type="text" id="numBip" class="form-control">
-                                <label for="form432" class="">Numero de Tarjeta</label>
+                                <input type="text" id="numBip" class="form-control" placeholder="Numero de su Tarjeta BIP">
                             </div>
                         </div>
                     </div>
@@ -63,26 +63,41 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <button type="button" class="btn btn-warning btn-lg align-bottom" onclick="getBip()">Ver Saldo</button>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option disabled selected>Seleccione tarifa...</option>
+                                    <option value="1">Tarifa Alta:760$</option>
+                                    <option value="2">Tarifa Media:680$</option>
+                                    <option value="3">Tarifa Baja:630$</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-warning btn-lg align-bottom" onclick="getBip()">Calcular</button>
                         </div>
                     </div>
                 </div>
 
-                <div id="divSaldo">
+                <div id="Pasaje">
+                </div>
+                <div id="saldoRestante">
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="bootstrap-4.1.1/js/bootstrap.min.js"></script>
     <script src="src/js/bip.js"></script>
     <script src="src/js/preguntas.js"></script>
-
 </body>
 
 </html>

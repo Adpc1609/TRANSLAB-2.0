@@ -50,7 +50,7 @@
 }
 
 .mostrarSaldo2{
-  background-color:rgba(214, 176, 7, 0.959);
+  background-color: rgb(255, 144, 25);
   height: 4rem;
 
 }
@@ -63,4 +63,9 @@ p.saldo {
 
 .titulo{
   color: white;
+}
+
+.col-centrada{
+    float: none;
+    margin: 0 auto;
 }

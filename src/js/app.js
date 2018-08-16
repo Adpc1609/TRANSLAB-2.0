@@ -14,7 +14,6 @@ function registerWithFirebase() {
         });
 }
 //Login de usuarios ya reistrados 
-
 function loginWithFirebase() {
     const emailValue = email.value;
     const passwordValue = password.value;
