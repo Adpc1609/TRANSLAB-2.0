@@ -3,57 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link rel="stylesheet" href="bootstrap-4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="src/css/perfil.css">
-
-</head>
-<title>Translab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Amaranth" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/prototipo/logo.png">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Perfil - TransLab2.0</title>
 </head>
 
 <body>
-     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <a href="#home" class="active">Trans-lab</a>
-                <!-- Navigation links (hidden by default) -->
-                <div id="myLinks">
-                    <i class="glyphicon glyphicon-usd"></i>
-                    <a href="#news"></a>Ver Saldo</a>
-                    <a href="#contact">Calcular Tarifa</a>
-                    <a href="#about">Preguntas Frecuentes</a>
-                    <a href="#out">Preguntas Frecuentes</a>
-                </div>
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-
-            </div>
-        </div>
-    </div>
-    <section class="fondoPerfil">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-8 rounded-circle" id="imagenFondo">
-                <img src="img/main-qimg-87001d2ce810c2f48c97032cbc905939.png" alt="" class="" img-circle "">
-
-            </div>
-        </div>
-    </section>
+    <!--comienzo barra navegación-->
     <div class="container">
-        <div class="col-md-6">
-
-            <div class="md-form">
-                <i class="fa fa-lock prefix"></i>
-                <input type="password" id="form1092" class="form-control validate">
-                <label for="form1092" data-error="wrong" data-success="right">Type your password</label>
+        <div class="row">
+            <div class="col">
+                <nav class="barra navbar-dark bg-dark">
+                    <button class="navbar-toggler ml-4" id="btn-menu" type="button " data-toggle="collapse " data-target="#navbarToggleExternalContent " aria-controls="navbarToggleExternalContent " aria-expanded="false " aria-label="Toggle navigation ">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <span id="titulo-menu">Trans-Lab</span>
+                </nav>
             </div>
-
         </div>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous"></script>
-    <script src="bootstrap-4.1.1/js/bootstrap.min.js"></script>
+        <!--fin barra navegación-->
+
+        <!--comienzo del perfil-->
+        <div class="row">
+            <div class="col center">
+                <div id="userPhoto" class="d-flex justify-content-center">
+                    <img src="" alt="" id="userPhotoo">
+                    <img id="userPhotoo" src="http://d28hp0i0mf9k3x.cloudfront.net/assets/default_person-3886b66ad5ca85d57ed2a0d12fd2b2e4.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column">
+                    <span id="userMail"></span>
+                    <input type="number" class="cardNumber" id="cardNumber" placeholder="Número tarjeta">
+                    <button type="button" id="btn-add" class="botones" value="AGREGAR TARJETA" onclick="saveCard()">AGREGAR TARJETA</button>
+
+                    <select class="custom-select d-flex justify-content-center p3 mt-3" style="width: 70%" id="contCard">
+                    
+                      </select>
+                </div>
+            </div>
+        </div>
+        <!--fin del perfil-->
+
+        <!--Comienzo menu hamburguesa-->
+        <div class="row">
+            <div class="col">
+                <div class="menu-lateral" id="menu-lateral">
+                    <a href="saldo.html" class="nav-link"><i class="fas fa-dollar-sign"></i> Ver Saldo</a>
+                    <a href="calcular.html" class="nav-link"><i class="fas fa-calculator"></i> Calcular Tarifa</a>
+                    <a href="profile.html" class="nav-link"><i class="fas fa-user-alt"></i> Perfil</a>
+                    <a href="preguntas.html" class="nav-link"><i class="fas fa-question"></i> Preguntas Frecuentes</a>
+                    <a href="home.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                </div>
+            </div>
+        </div>
+        <!--Fin menú hamburguesa -->
+        <a href="#" class="fondo-enlace" id="fondo-enlace"></a>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em " crossorigin="anonymous "></script>
     <script src="src/js/bip.js"></script>
 </body>
 
