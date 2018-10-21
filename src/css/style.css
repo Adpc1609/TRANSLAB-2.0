@@ -226,3 +226,29 @@ span#costoPasaje {
     padding: 30px;
     color: #fff;
 }
+
+/*ver saldo*/
+.mostrarSaldo{
+    background-color:#333;
+  }
+  
+  .mostrarSaldo2{
+    background-color: rgb(246, 168, 0);
+    height: 4rem;
+  
+  }
+  
+  p.saldo {
+    margin-top: -15px;
+    color: white;
+    font-size: 40px;
+  }
+  
+  .titulo{
+    color: white;
+  }
+  
+  .col-centrada{
+      float: none;
+      margin: 0 auto;
+  }

@@ -37,7 +37,8 @@ window.calculatorTarifa = () => {
     .then(response => response.json())
     .then(idBip => {
       calculator(idBip);
-      console.log
+      let saldoBip= idBip.saldoTarjeta;
+      console.log("EL SALDO ES " + saldoBip);
     })
     .cath(error => {
       console.log(error);
@@ -45,12 +46,12 @@ window.calculatorTarifa = () => {
     });
    
   let calculator = (idBip) => {
-    let selector = document.getElementById("selector");
-    let opciones = document.getElementsByTagName("option")[selector].value;
+    let selector = document.getElementById("boxSelect");
+    let opciones = document.getElementsByTagName("option")[boxSelect].value;
     infoSaldoActual = idBip[saldoTarjeta].replace(/[$,.]+/g,"");
-    let costoPasaje = document.getElementById("pasaje");
-    let saldoRestante = document.getElementById("saldoRestante");
-    if (opciones == 1) {
+    let costoPasaje = document.getElementById("costoPasaje");
+    let saldoFinal = document.getElementById("saldoFinal");
+    if (option == 1) {
       TarifaAlta = 760;
       saldoFinal = infoSaldoActual - TarifaAlta;
       let costoPasaje = '';
@@ -61,13 +62,13 @@ window.calculatorTarifa = () => {
       render += `<p class="titulo">COSTO PASAJE</p>`;
       render += `</div>`
       render += `<div class="mostrarSaldo2">`
-      render += `<p class="saldo">$+costoPasaje+</p>`;
+      render += `<p class="saldo">$costoPasaje</p>`;
       render += `</div>`;
       render += `</div>`;
       render += `</div>`;
       pasaje.innerHTML = costoPasaje;
 
-      let saldoRestante = '';
+      let saldoFinal = '';
       render += `<div class="container my-3">`;
       render += `<div class="row">`;
       render += `<div class="col-sm-12 text-center">`;
@@ -75,11 +76,11 @@ window.calculatorTarifa = () => {
       render += `<p class="titulo">SALDO FINAL</p>`;
       render += `</div>`
       render += `<div class="mostrarSaldo2">`
-      render += `<p class="saldo">$+saldoFinal+</p>`;
+      render += `<p class="saldo">$saldoFinal</p>`;
       render += `</div>`;
       render += `</div>`;
       render += `</div>`;
-      saldoRestante.innerHTML = saldoRestante;
+      saldoRestante.innerHTML = saldoFinal;
     }
   }
 };

@@ -1,94 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+$(function() {
+    let boton = $('#btn-menu');
+    let fondo_enlace = $('#fondo-enlace');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Amaranth" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./assets/prototipo/logo.png">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <title>Calcular Tarifa - TransLab2.0</title>
-</head>
+    boton.on('click', function() {
+        fondo_enlace.toggleClass('active');
+        $('#menu-lateral').toggleClass('active');
+    });
 
-<body>
-    <!--comienzo barra navegación-->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav class="barra navbar-dark bg-dark ">
-                    <button class="navbar-toggler ml-4" id="btn-menu" type="button " data-toggle="collapse " data-target="#navbarToggleExternalContent " aria-controls="navbarToggleExternalContent " aria-expanded="false " aria-label="Toggle navigation ">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <span id="titulo-menu">Trans-Lab</span>
-                </nav>
-            </div>
-        </div>
-        <!--fin barra navegación-->
-
-        <!--comienzo del perfil-->
-        <div class="container">
-            <div class="row">
-                <div class="col-12 boxSaldo">
-                    <input type="number" class="cardNumber" id="cardNumber" placeholder="Número tarjeta">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col d-inline-flex justify-content-around" id="boxLabel">
-                    <label for="">Tarifa</label>
-                    <label for="">Tarjetas</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 d-inline-flex justify-content-start" id="boxSelect">
-                    <select class="custom-select col-6 boxSelect" style='font-size: 12px' id="selectHorarios">
-                          <option value="" disabled selected>Horarios</option>
-                          <option value=630>Bajo: 6:00-6:29 || 20:45-23:00</option>
-                          <option value=680>Valle: 06:30-06:59 ||09:00-17:59</option>
-                          <option value=760>Punta: 7:00-8:59 || 18:00-19:59</option>
-                    </select>
-                    <select class="custom-select col-6 boxSelect" style='font-size: 1px' id="selectTarjetas"></select>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <input type="button" id="btn-calcular" class="botones " value="CALCULAR" onclick="calcularSaldo()">
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div id="costoPasaje"></div>
-                        <div id="saldoFinal"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--fin del perfil-->
-
-        <!--Comienzo menu hamburguesa-->
-        <div class="row">
-            <div class="col">
-                <div class="menu-lateral" id="menu-lateral">
-                    <a href="saldo.html" class="nav-link "><i class="fas fa-dollar-sign "></i> Ver Saldo</a>
-                    <a href="calcular.html" class="nav-link "><i class="fas fa-calculator "></i> Calcular Tarifa</a>
-                    <a href="profile.html" class="nav-link "><i class="fas fa-user-alt "></i> Perfil</a>
-                    <a href="preguntas.html" class="nav-link "><i class="fas fa-question "></i> Preguntas Frecuentes</a>
-                    <a href="home.html" class="nav-link "><i class="fas fa-home "></i> Home</a>
-                </div>
-            </div>
-        </div>
-        <!--Fin menú hamburguesa -->
-        <a href="#" class="fondo-enlace" id="fondo-enlace"></a>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js " integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em " crossorigin="anonymous "></script>
-    <script src="src/js/menu.js"></script>
-    <script src="src/js/calculate.js"></script>
-    <!-- <script src="src/js/main.js"></script> -->
-    <!-- <script src="src/js/login.js"></script> -->
-</body>
-
-</html>
+    fondo_enlace.on('click', function() {
+        fondo_enlace.toggleClass('active');
+        $('#menu-lateral').toggleClass('active');
+    });
+}())
