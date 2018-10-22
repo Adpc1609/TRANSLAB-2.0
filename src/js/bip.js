@@ -35,26 +35,16 @@ window.calculatorTarifa = () => {
   let url = `https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${idBip}`;
   fetch(url)
     .then(response => response.json())
-    .then(idBip => {
-      calculator(idBip);
-      let saldoBip= idBip.saldoTarjeta;
-      console.log("EL SALDO ES " + saldoBip);
-    })
-    .cath(error => {
-      console.log(error);
+    .then(idBip =>{
+      let saldoBip = idBip.saldoTarjeta
+      let saldoSinPunto = saldoBip.replace(/[$,.]+/g,"");
+      const select = document.getElementById("selectHorarios");
+      const horarios = select.options[select.selectedIndex].value;
+      let saldoResto= saldoSinPunto - horarios;
+      let costoPasaje = document.getElementById("costoPasaje");
+      let saldoFinal = document.getElementById("saldoFinal");
 
-    });
-   
-  let calculator = (idBip) => {
-    let selector = document.getElementById("boxSelect");
-    let opciones = document.getElementsByTagName("option")[boxSelect].value;
-    infoSaldoActual = idBip[saldoTarjeta].replace(/[$,.]+/g,"");
-    let costoPasaje = document.getElementById("costoPasaje");
-    let saldoFinal = document.getElementById("saldoFinal");
-    if (option == 1) {
-      TarifaAlta = 760;
-      saldoFinal = infoSaldoActual - TarifaAlta;
-      let costoPasaje = '';
+      let render = '';
       render += `<div class="container my-3">`;
       render += `<div class="row">`;
       render += `<div class="col-sm-12 text-center">`;
@@ -62,25 +52,28 @@ window.calculatorTarifa = () => {
       render += `<p class="titulo">COSTO PASAJE</p>`;
       render += `</div>`
       render += `<div class="mostrarSaldo2">`
-      render += `<p class="saldo">$costoPasaje</p>`;
+      render += `<p class="saldo">${horarios}</p>`;
       render += `</div>`;
       render += `</div>`;
       render += `</div>`;
-      pasaje.innerHTML = costoPasaje;
+      costoPasaje.innerHTML = render;
 
-      let saldoFinal = '';
-      render += `<div class="container my-3">`;
-      render += `<div class="row">`;
-      render += `<div class="col-sm-12 text-center">`;
-      render += `<div class="mostrarSaldo">`
-      render += `<p class="titulo">SALDO FINAL</p>`;
-      render += `</div>`
-      render += `<div class="mostrarSaldo2">`
-      render += `<p class="saldo">$saldoFinal</p>`;
-      render += `</div>`;
-      render += `</div>`;
-      render += `</div>`;
-      saldoRestante.innerHTML = saldoFinal;
-    }
-  }
-};
+      let render1= '';
+      render1 += `<div class="container my-3">`;
+      render1 += `<div class="row">`;
+      render1 += `<div class="col-sm-12 text-center">`;
+      render1 += `<div class="mostrarSaldo">`
+      render1 += `<p class="titulo">SALDO FINAL</p>`;
+      render1 += `</div>`
+      render1 += `<div class="mostrarSaldo2">`
+      render1 += `<p class="saldo">${saldoResto}</p>`;
+      render1 += `</div>`;
+      render1 += `</div>`;
+      render1 += `</div>`;
+      saldoFinal.innerHTML = render1;
+
+   
+    })
+    
+}
+
