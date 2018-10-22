@@ -29,7 +29,7 @@ window.getBip = () => {
     divSaldo.innerHTML = render;
   };
 }
-
+/*calcular tarifa y pasaje */
 window.calculatorTarifa = () => {
   let idBip = document.getElementById('numBip').value;
   let url = `https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${idBip}`;
